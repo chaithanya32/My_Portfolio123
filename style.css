@@ -1,0 +1,223 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #2c3e50;
+    color: #ecf0f1;
+}
+
+/* Header */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+}
+nav ul li {
+    margin: 0 15px;
+}
+nav ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+nav ul li a:hover {
+    color: #f39c12;
+}
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+h2{
+    color: #b36f03;
+    margin-top: 30px;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+/* Sections */
+section {
+    padding: 100px 10%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.home-content, .about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.home-text {
+    max-width: 50%;
+    text-align: left;
+}
+.home img, .about img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Skills Section */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
+}
+.skill {
+    background:rgba(105, 135, 199, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(239, 255, 8, 0.473);
+    transition: transform 0.3s;
+}
+.skill:hover {
+    transform: scale(1.1);
+}
+.skill-bar {
+    width: 100%;
+    background:rgba(0, 204, 255, 0.3);
+    border-radius: 10px;
+    height: 20px;
+    margin-top: 10px;
+}
+.skill-level {
+    height: 100%;
+    background:rgb(59, 1, 59);
+    border-radius: 10px;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    font-weight: bold;
+}
+/* Skill Heading Styling */
+.skill h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff; /* Fallback color */
+    
+    background: linear-gradient(90deg, #ffffff, #bbbbbb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+
+/* Hover Effect for Headings */
+.skill h3:hover {
+    transform: scale(1.1);
+    text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.6);
+}
+
+
+/* Work Section */
+.work-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.project {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.project img {
+    width: 250px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+.project img:hover {
+    transform: scale(1.1);
+}
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.project:hover .overlay {
+    opacity: 1;
+}
+
+/* Contact Section */
+.contact-options a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.linkedin-btn { background: #0077b5; }
+.linkedin-btn:hover { background: #005a8d; }
+.email-btn { background: #1cc88a; }
+.email-btn:hover { background: #17a673; }
+.contact-btn { background: #f39c12; }
+.contact-btn:hover { background: #e67e22; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .home-content, .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .home-text, .about-text {
+        max-width: 100%;
+    }
+    .hamburger {
+        display: block;
+    }
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: rgba(0, 0, 0, 0.9);
+        width: 200px;
+        text-align: center;
+    }
+    nav ul.active {
+        display: flex;
+    }
+}
